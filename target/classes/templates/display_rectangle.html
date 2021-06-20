@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" style="background-color: darkgrey; padding-left: 10px; padding-top: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body th:object="${rectangle}" th:action="@{'/rectangles_db/' + ${rectangle.id}}" th:method="get">
+<p th:text="*{name}" th:style="'background-color:' +  *{color} + '; height: ' + *{height} + 'px; width: ' + *{width} +'px;'"></p>
+<table  style="border: solid 1pt black;">
+    <tr  style="border: solid 1pt black;">
+        <th style="border: solid 1pt black;">Name</th>
+        <td th:text="*{name}" style="border: solid 1pt black;"></td>
+    </tr>
+    <tr style="border: solid 1pt black;">
+        <th style="border: solid 1pt black;">Width</th>
+        <td th:text="*{width}" style="border: solid 1pt black;"></td>
+    </tr>
+    <tr style="border: solid 1pt black;">
+        <th style="border: solid 1pt black;">Height</th>
+        <td th:text="*{height}" style="border: solid 1pt black;"></td>
+    </tr>
+    <tr style="border: solid 1pt black;">
+        <th style="border: solid 1pt black;">Color</th>
+        <td th:text="*{color}" style="border: solid 1pt black;"></td>
+    </tr>
+</table>
+<p><a href="/rectangles_db">Back to the db</a></p>
+</body>
+</html>

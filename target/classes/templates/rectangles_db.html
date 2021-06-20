@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" style="background-color: darkgrey; padding-left: 10px; padding-top: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+<h1>All Rectangles</h1>
+<table style="border: solid 1pt black;">
+    <tr style="border: solid 1pt black;">
+        <th style="border: solid 1pt black;">id</th>
+        <th style="border: solid 1pt black;">Name</th>
+        <th style="border: solid 1pt black;">Color</th>
+    </tr>
+    <tr th:each="rectangles : ${rectangles}" style="border: solid 1pt black;">
+        <td style="border: solid 1pt black;"><a th:text="${rectangles.id}" th:href="@{'/rectangles_db/' + ${rectangles.id}}"></a></td>
+        <td th:text="${rectangles.name}" style="border: solid 1pt black;">
+        <td th:text="${rectangles.color}" style="border: solid 1pt black;">
+    </tr>
+</table>
+<p>Delete Rectangle</p>
+<form action = "#" method="post" th:action="@{/rectangles_db}" th:object="${rectangle}">
+    <input type="number" th:field="*{id}" placeholder="Delete By id"> <br>
+    <input type="submit" value="Delete" id="delete"/>
+</form>
+<p><a href="/rectangle">Add Rectangle</a></p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/" style="background-color: darkgrey; padding-left: 10px; padding-top: 20px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Add Rectangle</h1>
+<form action = "#" method="post" th:action="@{/rectangle}" th:object="${rectangle}">
+    <input type="text" th:field="*{name}" placeholder="name"> <br>
+    <input type="text" th:field="*{height}" placeholder="height"> <br>
+    <input type="text" th:field="*{width}" placeholder="width"> <br>
+    <input type="text" th:field="*{color}" placeholder="color"> <br>
+    <input type="submit" value="Submit Rectangle" style="padding-top: 5px; padding-bottom: 5px;"/>
+</form>
+<a href="/rectangles_db">All Rectangles</a>
+</body>
+</html>
